@@ -2,7 +2,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const session = require('cookie-session')
 
-const config = require('./config')
 const { errorHandler } = require('./middlewares/errorHandler')
 
 // Routes
@@ -11,12 +10,11 @@ const APIRouter = require('./routes/api')
 
 const app = express()
 
-const { dbUrl } = config
-mongoose.connect(dbUrl, {
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb+srv://dbUser:dbUserPassword@cluster0.28lky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  keepAlive: 1,
-  connectTimeoutMS: 30000,
 })
 
 app.use(express.json())
