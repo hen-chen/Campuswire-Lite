@@ -12,9 +12,11 @@
   "description": "",
   "dependencies": {
     "babel-eslint": "^10.1.0",
+    "cookie-session": "^1.4.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "express": "^4.17.1",
+    "mongoose": "^6.0.12",
     "react": "^17.0.2"
   },
   "devDependencies": {
