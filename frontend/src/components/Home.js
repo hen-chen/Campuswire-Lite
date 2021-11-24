@@ -83,19 +83,19 @@ const Home = () => {
           <button type="button" className="btn float-right btn-danger" onClick={logout}> Logout </button>
           <br />
           <button type="button" className="btn mx-1 btn-primary" onClick={() => setNewQuestion(true)}> Add a new Question! </button>
+          {newQuestion && (
+            <div className="container">
+              <h4> New Question: </h4>
+              <input onChange={e => setQText(e.target.value)} placeholder="Write question here" />
+              <br />
+              <button type="button" className="btn mx-1 btn-primary" onClick={addQ}> Submit Question! </button>
+              <button type="button" className="btn mx-1 btn-danger" onClick={() => setNewQuestion(false)}> Cancel </button>
+            </div>
+          )}
         </div>
       )}
       {!logged && (
         <Link to="/account/login"> Log in to submit a question </Link>
-      )}
-      {newQuestion && logged && (
-        <div className="container">
-          <h4> New Question: </h4>
-          <input onChange={e => setQText(e.target.value)} placeholder="Write question here" />
-          <br />
-          <button type="button" className="btn mx-1 btn-primary" onClick={addQ}> Submit Question! </button>
-          <button type="button" className="btn mx-1 btn-danger" onClick={() => setNewQuestion(false)}> Cancel </button>
-        </div>
       )}
       <h3> Questions:</h3>
       <hr />
