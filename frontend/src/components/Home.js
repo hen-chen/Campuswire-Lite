@@ -77,6 +77,7 @@ const Home = () => {
         <div className="page-header">
           <h2>
             Welcome
+            {' '}
             {username}
           </h2>
           <button type="button" className="btn float-right btn-danger" onClick={logout}> Logout </button>

@@ -24,10 +24,9 @@ const Login = () => {
   return (
     <div className="container">
       <h2>Login</h2>
-      <p> Username: </p>
-      <input onChange={e => setUsername(e.target.value)} />
-      <p> Password: </p>
-      <input onChange={e => setPassword(e.target.value)} />
+      <input onChange={e => setUsername(e.target.value)} placeholder="Username..." />
+      <br />
+      <input onChange={e => setPassword(e.target.value)} placeholder="Password..." />
       <br />
       <button type="button" className="btn mx-1 btn-primary" onClick={loginUser}>Login</button>
       <Link to="/account/signup">Sign up if you do not have an account!</Link>
