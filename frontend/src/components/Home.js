@@ -93,16 +93,7 @@ const Home = () => {
           <input onChange={e => setQText(e.target.value)} placeholder="Write question here" />
           <br />
           <button type="button" className="btn mx-1 btn-primary" onClick={addQ}> Submit Question! </button>
-          <button
-            type="button"
-            className="btn mx-1 btn-danger"
-            onClick={() => {
-              setNewQuestion(false)
-              setQText('')
-            }}
-          >
-            Cancel
-          </button>
+          <button type="button" className="btn mx-1 btn-danger" onClick={() => setNewQuestion(false)}> Cancel </button>
         </div>
       )}
       <h3> Questions:</h3>
