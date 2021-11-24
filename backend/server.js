@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const session = require('cookie-session')
+const path = require('path')
 
 const { errorHandler } = require('./middlewares/errorHandler')
 
@@ -25,7 +26,7 @@ app.use(express.json())
 app.use(session({
   name: 'session',
   keys: ['key1', 'key2'],
-  maxAge: 3600000,
+  maxAge: 1000000,
 }))
 
 app.use('/account', AccountRouter)
